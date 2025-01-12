@@ -22,6 +22,7 @@ func (sc *SchemeController) GetAllSchemes(c *gin.Context) {
 	data, err := scheme.GetAllSchemes(ctx, sc.DB)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get schemes : " + err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"schemes": data})
 }

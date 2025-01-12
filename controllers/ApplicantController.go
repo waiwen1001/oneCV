@@ -22,6 +22,7 @@ func (ac *ApplicantController) GetAllApplicants(c *gin.Context) {
 	data, err := applicant.GetAllApplicants(ctx, ac.DB)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get applicants : " + err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"applicants": data})
 }
