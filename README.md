@@ -84,6 +84,8 @@ To quickly get started with testing the OneCV API, you can import the provided P
 
 Once imported, you will see all available API requests organized by category, and you can start testing them by sending requests directly from Postman.
 
+---
+
 #### Get all Applicants
 
 ```http
