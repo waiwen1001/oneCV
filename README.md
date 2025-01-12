@@ -86,6 +86,7 @@ Once imported, you will see all available API requests organized by category, an
 
 ---
 
+### API Documentations
 #### Get all Applicants
 
 ```http
