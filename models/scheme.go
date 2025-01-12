@@ -151,6 +151,7 @@ func (s *Scheme) CreateScheme(ctx context.Context, db *sql.DB, req SchemeRequest
 		return fmt.Errorf("could not insert scheme: %v", err)
 	}
 
+	s.Id = schemeID
 	err = s.CreateCriteriaAndBenefit(ctx, tx, req)
 	if err != nil {
 		return err
