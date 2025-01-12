@@ -70,6 +70,21 @@ DB_CONNECTION="postgresql://onecv_user:onecv_pw@localhost:5432/onecv?sslmode=dis
    go run main.go
    ```
 
+### Step 5: Run Goose Migration
+1. **Run Goose Migration**
+
+    If the environment variables from Step 2 have been set up, you can run the migration by executing:
+    ```bash
+    goose up
+    ```
+    If the environment variables are not set, you can run the migration with the full connection string:
+    ``` bash
+    goose -dir ./migrations postgres "postgresql://onecv_user:onecv_pw@localhost:5432/onecv?sslmode=disable" up
+    ```
+### Troubleshooting
+- **PostgreSQL Connection Issues:** Ensure that your Docker container is running and the port is correctly mapped to `5432`.
+- **Migration Errors:** If you encounter issues with Goose migrations, ensure that your migrations are correctly placed in the `./migrations` directory.
+
 ## API Reference
 
 ### API Testing with Postman
