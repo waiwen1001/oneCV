@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "545bf7df-c688-4edb-8722-7ce2a398a1af",
+		"name": "oneCV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4493636"
+	},
+	"item": [
+		{
+			"name": "Get all applicants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applicants",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create applicant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John\",\r\n  \"employment_status\": \"Unemployed\",\r\n  \"sex\": \"Male\",\r\n  \"date_of_birth\": \"1985-06-21\",\r\n  \"marital_status\": \"Single\",\r\n  \"household\": [\r\n    {\r\n      \"name\": \"Jake\",\r\n      \"relation\": \"Son\",\r\n      \"date_of_birth\": \"2018-02-11\",\r\n      \"sex\": \"Male\",\r\n      \"employment_status\": \"Unemployed\"\r\n    },\r\n    {\r\n      \"name\": \"Micheal\",\r\n      \"relation\": \"Daughter\",\r\n      \"date_of_birth\": \"2004-11-22\",\r\n      \"sex\": \"Female\",\r\n      \"employment_status\": \"Unemployed\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/applicants",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all schemes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/schemes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new scheme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Retrenchment Assistance Scheme (families)\",\r\n    \"description\": \"Financial assistance for retrenched workers\",\r\n    \"criteria\": [\r\n        {\r\n            \"conditions\": {\r\n                \"employment_status\": \"unemployed\"\r\n            },\r\n            \"benefits\": [\r\n                {\"name\": \"Benefit 001\", \"amount\": 500.00},\r\n                {\"name\": \"Benefit 002\", \"amount\": 100.00}\r\n            ]\r\n        },\r\n        {\r\n            \"conditions\": {\r\n                \"has_children\": {\r\n                    \"school_level\": \"== primary\"\r\n                }\r\n            },\r\n            \"benefits\": [\r\n                {\"name\": \"Benefit 003\", \"amount\": 1000.00},\r\n                {\"name\": \"Benefit 004\", \"amount\": 50.00}\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/schemes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check applicant eligible scheme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/schemes/eligible?applicant=a02cb4d1-f98e-48ac-bc14-08f61749350c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes",
+						"eligible"
+					],
+					"query": [
+						{
+							"key": "applicant",
+							"value": "a02cb4d1-f98e-48ac-bc14-08f61749350c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applications",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get applicant by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applicants/a02cb4d1-f98e-48ac-bc14-08f61749350c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants",
+						"a02cb4d1-f98e-48ac-bc14-08f61749350c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create applications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicant_id\": \"a02cb4d1-f98e-48ac-bc14-08f61749350c\",\r\n    \"scheme_id\": \"0f30e79d-3cc2-4855-88f3-5ce33a42d9be\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/applications",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update applicant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Johnny\",\r\n  \"employment_status\": \"Employed\",\r\n  \"sex\": \"Male\",\r\n  \"date_of_birth\": \"1985-06-21\",\r\n  \"marital_status\": \"Single\",\r\n  \"household\": [\r\n    {\r\n      \"name\": \"Jim\",\r\n      \"relation\": \"Son\",\r\n      \"date_of_birth\": \"2020-02-11\",\r\n      \"sex\": \"Male\",\r\n      \"employment_status\": \"Unemployed\"\r\n    },\r\n    {\r\n      \"name\": \"Ricky\",\r\n      \"relation\": \"Daughter\",\r\n      \"date_of_birth\": \"2014-11-22\",\r\n      \"sex\": \"Female\",\r\n      \"employment_status\": \"Unemployed\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/applicants/a02cb4d1-f98e-48ac-bc14-08f61749350c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants",
+						"a02cb4d1-f98e-48ac-bc14-08f61749350c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete applicant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applicants/a02cb4d1-f98e-48ac-bc14-08f61749350c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants",
+						"a02cb4d1-f98e-48ac-bc14-08f61749350c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update scheme",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Retrenchment Assistance Scheme (families)\",\r\n    \"description\": \"Financial assistance for retrenched workers\",\r\n    \"criteria\": [\r\n        {\r\n            \"conditions\": {\r\n                \"employment_status\": \"unemployed\"\r\n            },\r\n            \"benefits\": [\r\n                {\"name\": \"Benefit 001\", \"amount\": 500.00},\r\n                {\"name\": \"Benefit 002\", \"amount\": 100.00}\r\n            ]\r\n        },\r\n        {\r\n            \"conditions\": {\r\n                \"has_children\": {\r\n                    \"school_level\": \"== primary\"\r\n                }\r\n            },\r\n            \"benefits\": [\r\n                {\"name\": \"Benefit 003\", \"amount\": 1000.00},\r\n                {\"name\": \"Benefit 004\", \"amount\": 50.00}\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/schemes/0f30e79d-3cc2-4855-88f3-5ce33a42d9be",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes",
+						"0f30e79d-3cc2-4855-88f3-5ce33a42d9be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete scheme",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/schemes/0f30e79d-3cc2-4855-88f3-5ce33a42d9be",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes",
+						"0f30e79d-3cc2-4855-88f3-5ce33a42d9be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update application",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Approved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/applications/398112eb-ba30-4c1f-a434-9a98c3755f01",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications",
+						"398112eb-ba30-4c1f-a434-9a98c3755f01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete application",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applications/e557b325-e90d-4966-8e90-0fb80a477763",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications",
+						"e557b325-e90d-4966-8e90-0fb80a477763"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

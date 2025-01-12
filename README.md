@@ -70,9 +70,19 @@ DB_CONNECTION="postgresql://onecv_user:onecv_pw@localhost:5432/onecv?sslmode=dis
    go run main.go
    ```
 
-
-
 ## API Reference
+
+### API Testing with Postman
+To quickly get started with testing the OneCV API, you can import the provided Postman collection.
+#### Steps to Import the Postman Collection
+1. Download the `oneCV.postman_collection.json` file from the `/postman` directory in this repository.
+2. Open Postman.
+3. In the top left corner of Postman, click on the **Import** button.
+4. In the Import dialog, select the **File** tab.
+5. Click on **Choose Files** and select the `oneCV.postman_collection.json` file you downloaded.
+6. Click **Open** to import the collection into Postman.
+
+Once imported, you will see all available API requests organized by category, and you can start testing them by sending requests directly from Postman.
 
 #### Get all Applicants
 
