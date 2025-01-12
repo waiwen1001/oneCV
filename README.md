@@ -19,11 +19,11 @@ Ensure the following tools are installed on your system:
 
 ### Step 1: Set Up PostgreSQL Using Docker
 Run the following command to set up and start a PostgreSQL database container:
-- Run the following command to download the PostgreSQL Docker image: 
+1. Run the following command to download the PostgreSQL Docker image: 
 ```bash
 docker pull postgres
 ```
-- Start a PostgreSQL container with the required environment variables:
+2. Start a PostgreSQL container with the required environment variables:
 ```bash
 docker run --name onecv_db -e POSTGRES_USER=onecv_user -e POSTGRES_PASSWORD=onecv_pw -e POSTGRES_DB=onecv -p 5432:5432 -d postgres
 ```
@@ -54,17 +54,17 @@ DB_CONNECTION="postgresql://onecv_user:onecv_pw@localhost:5432/onecv?sslmode=dis
 
 ### Step 4: Install Dependencies and Run the Application
 
-- **Install Dependencies:**  
+1. **Install Dependencies:**  
    Run the following command to install the dependencies listed in your `go.mod` file:
    ```bash
    go get
    ```
-- **Clean Up Dependencies:**  
+2. **Clean Up Dependencies:**  
    Use `go mod tidy` to remove any unused dependencies and ensure everything is clean:
    ```bash
    go mod tidy
    ```
-- **Run the Application:**  
+3. **Run the Application:**  
    Finally, run the application with the following command:
    ```bash
    go run main.go
@@ -106,6 +106,8 @@ Once imported, you will see all available API requests organized by category, an
     ]
 }
 ```
+
+---
 
 #### Create Applicant
 
@@ -163,6 +165,8 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
+
 #### Get all Schemes
 
 ```http
@@ -187,6 +191,8 @@ The request body should be a raw JSON object with the following fields:
     ]
 }
 ```
+
+---
 
 #### Create new Scheme
 
@@ -245,6 +251,8 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
+
 #### Get Eligible Schemes for an Applicant
 
 ```http
@@ -274,6 +282,8 @@ The request body should be a raw JSON object with the following fields:
     ]
 }
 ```
+
+---
 
 #### Get All Applications
 ```http
@@ -305,6 +315,7 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
 
 #### Get Applicant by ID
 ```http
@@ -332,6 +343,8 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
+
 #### Create Application
 ```http
   POST /api/applications
@@ -354,6 +367,8 @@ The request body should be a raw JSON object with the following fields:
     "message": "Application submitted successfully"
 }
 ```
+
+---
 
 #### Update Applicant by Id
 ```http
@@ -402,6 +417,8 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
+
 #### Delete Applicant
 ```http
   DELETE /api/applicants/{id}
@@ -419,6 +436,8 @@ The request body should be a raw JSON object with the following fields:
     "message": "Applicant deleted successfully"
 }
 ```
+
+---
 
 #### Update Scheme
 ```http
@@ -470,6 +489,8 @@ The request body should be a raw JSON object with the following fields:
 }
 ```
 
+---
+
 #### Delete Scheme
 ```http
   DELETE /api/schemes/{id}
@@ -487,6 +508,8 @@ The request body should be a raw JSON object with the following fields:
     "message": "Scheme deleted successfully"
 }
 ```
+
+---
 
 #### Update Application
 ```http
@@ -512,6 +535,8 @@ The request body should be a raw JSON object with the following fields:
     "message": "Application submitted successfully"
 }
 ```
+
+---
 
 #### Delete Application
 ```http
